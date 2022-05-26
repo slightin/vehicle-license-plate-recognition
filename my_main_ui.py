@@ -83,10 +83,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # clor view
             if color == "yello":
                 self.label_4.setStyleSheet("background-color: rgb(255, 255, 0);")
+                self.label_4.setText("黄色车牌")
+                self.label_4.setAlignment(Qt.AlignHCenter)
             elif color == "green":
                 self.label_4.setStyleSheet("background-color: rgb(0, 255,0);")
+                self.label_4.setText("绿色车牌")
+                self.label_4.setAlignment(Qt.AlignHCenter)
             elif color == "blue":
-                self.label_4.setStyleSheet("background-color: rgb(0, 0, 255);")
+                self.label_4.setStyleSheet("color:white;background-color: rgb(0, 0, 255);")
+                self.label_4.setText("蓝色车牌")
+                self.label_4.setAlignment(Qt.AlignHCenter)
             else:
                 self.label_4.setText("未识别出车牌颜色")
 
@@ -104,6 +110,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             QtWidgets.QApplication.processEvents()
         
         except Exception as e:
+            traceback.print_exc()
             QMessageBox.warning(self,"错误提示","[错误提示(请联系开发人员处理)]：\n" + str(e)+"\n或识别失败导致")
 
     
