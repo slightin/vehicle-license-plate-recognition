@@ -121,7 +121,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     
-    splash = QSplashScreen(QtGui.QPixmap(':/pic/pic/face.png'))
+    splash = QSplashScreen(QtGui.QPixmap('./pic/siee.png'))
 
     splash.show()
     splash.showMessage('渲染界面...')
