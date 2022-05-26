@@ -228,7 +228,7 @@ class Ui_MainWindow(object):
         self.label_4.setText("")
         self.label_4.setObjectName("label_4")
         self.pushButton_6 = QtWidgets.QPushButton(self.centralWidget)
-        self.pushButton_6.setGeometry(QtCore.QRect(710, 492, 75, 41))
+        self.pushButton_6.setGeometry(QtCore.QRect(710, 492, 161, 41))
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap(":/pic/pic/image.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_6.setIcon(icon4)
