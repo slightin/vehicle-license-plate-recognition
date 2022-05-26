@@ -1,5 +1,5 @@
 /__pycache__/
-# /temp/seg_card.jpg
+/temp/seg_card.jpg
 *.pyc
 *.spec
 /test_img/
