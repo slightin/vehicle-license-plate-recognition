@@ -58,7 +58,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         print("加载图像")
         try:
-            self.file_dir_temp,_ = QFileDialog.getOpenFileName(self,"选择被检测的车辆","D:/")
+            self.file_dir_temp,_ = QFileDialog.getOpenFileName(self,"选择被检测的车辆","./test_img")
             self.file_dir = self.file_dir_temp.replace("\\","/")
             print(self.file_dir)
 
