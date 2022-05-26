@@ -20,6 +20,7 @@ import cv2
 from car_id_detect import *
 from svm_train import *
 from card_seg import *
+import traceback
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     """
@@ -111,16 +112,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         except Exception as e:
             traceback.print_exc()
-            QMessageBox.warning(self,"错误提示","[错误提示(请联系开发人员处理)]：\n" + str(e)+"\n或识别失败导致")
-
-    
-    @pyqtSlot()
-    def on_pushButton_7_clicked(self):
-        """
-        加载视频
-        """
-        print("加载视频")
-        QMessageBox.information(self,"加载实时视频","未检测到实时视频源或暂未开通快该服务！")
+            tra=traceback.format_exc()
+            QMessageBox.warning(self,"错误提示","错误详情\n" + tra +"\n\n或识别失败导致")
 
 
 
