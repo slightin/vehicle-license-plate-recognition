@@ -20,6 +20,7 @@ import cv2
 from car_id_detect import *
 from svm_train import *
 from card_seg import *
+import traceback
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     """
@@ -58,7 +59,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         print("加载图像")
         try:
-            self.file_dir_temp,_ = QFileDialog.getOpenFileName(self,"选择被检测的车辆","D:/")
+            self.file_dir_temp,_ = QFileDialog.getOpenFileName(self,"选择被检测的车辆","./test_img")
             self.file_dir = self.file_dir_temp.replace("\\","/")
             print(self.file_dir)
 
@@ -83,10 +84,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # clor view
             if color == "yello":
                 self.label_4.setStyleSheet("background-color: rgb(255, 255, 0);")
+                self.label_4.setText("黄色车牌")
+                self.label_4.setAlignment(Qt.AlignHCenter)
             elif color == "green":
                 self.label_4.setStyleSheet("background-color: rgb(0, 255,0);")
+                self.label_4.setText("绿色车牌")
+                self.label_4.setAlignment(Qt.AlignHCenter)
             elif color == "blue":
-                self.label_4.setStyleSheet("background-color: rgb(0, 0, 255);")
+                self.label_4.setStyleSheet("color:white;background-color: rgb(0, 0, 255);")
+                self.label_4.setText("蓝色车牌")
+                self.label_4.setAlignment(Qt.AlignHCenter)
             else:
                 self.label_4.setText("未识别出车牌颜色")
 
@@ -104,16 +111,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             QtWidgets.QApplication.processEvents()
         
         except Exception as e:
-            QMessageBox.warning(self,"错误提示","[错误提示(请联系开发人员处理)]：\n" + str(e)+"\n或识别失败导致")
-
-    
-    @pyqtSlot()
-    def on_pushButton_7_clicked(self):
-        """
-        加载视频
-        """
-        print("加载视频")
-        QMessageBox.information(self,"加载实时视频","未检测到实时视频源或暂未开通快该服务！")
+            traceback.print_exc()
+            tra=traceback.format_exc()
+            QMessageBox.warning(self,"错误提示","错误详情\n" + tra +"\n\n或识别失败导致")
 
 
 
@@ -121,7 +121,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     
-    splash = QSplashScreen(QtGui.QPixmap(':/pic/pic/face.png'))
+    splash = QSplashScreen(QtGui.QPixmap('./pic/siee.png'))
 
     splash.show()
     splash.showMessage('渲染界面...')
