@@ -121,11 +121,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     
-    splash = QSplashScreen(QtGui.QPixmap('./pic/siee.png'))
+    splash = QSplashScreen(QtGui.QPixmap('./pic/siee2.png'))
 
     splash.show()
     splash.showMessage('渲染界面...')
-    QThread.sleep(0.6)
+    QThread.sleep(1)
     splash.showMessage('正在初始化程序...')
     QThread.sleep(0.6)
     app. processEvents()

@@ -155,7 +155,7 @@
      <rect>
       <x>710</x>
       <y>492</y>
-      <width>75</width>
+      <width>161</width>
       <height>41</height>
      </rect>
     </property>
@@ -167,7 +167,7 @@
       <normaloff>:/pic/pic/image.png</normaloff>:/pic/pic/image.png</iconset>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <!-- <widget class="QPushButton" name="pushButton_7">
     <property name="geometry">
      <rect>
       <x>810</x>
@@ -183,7 +183,7 @@
      <iconset resource="my_pic.qrc">
       <normaloff>:/pic/pic/video.png</normaloff>:/pic/pic/video.png</iconset>
     </property>
-   </widget>
+   </widget> -->
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
